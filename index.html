@@ -183,14 +183,26 @@ details.fold > summary:focus-visible { outline: 2px solid var(--glow); outline-o
 section:has(> details.fold) { gap: 0; }
 section:has(> details.fold) + section:has(> details.fold) { margin-top: calc(6px - var(--gap)); }
 .day .body > h3 { grid-column: 1; grid-row: 1; }
-.day .body > ul { grid-column: 1 / -1; grid-row: 2; }
+.day .body > .wx { grid-column: 1 / -1; grid-row: 2; }
+.day .body > ul { grid-column: 1 / -1; grid-row: 3; }
+.wx {
+  display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 10px; align-items: center;
+  padding: 8px 12px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--line);
+  font-size: .86rem; color: var(--muted);
+}
+.wx-ico { width: 22px; height: 22px; color: var(--bulb-blue); }
+.wx-label { font-family: var(--font-data); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; display: block; }
+.wx.live .wx-label { color: var(--glow); }
+.wx-temp { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.wx-link { font-size: .78rem; color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; white-space: nowrap; }
+.wx-link:hover, .wx-link:focus-visible { border-color: var(--glow); color: var(--glow); }
 .day ul { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 6px; }
 .day li { display: grid; grid-template-columns: 56px 1fr; gap: 10px; }
 .day li .t { font-family: var(--font-data); font-size: .8rem; color: var(--muted); padding-top: 2px; font-variant-numeric: tabular-nums; }
 .day li.hl span:last-child { font-weight: 600; }
 .meta { grid-column: 2; grid-row: 1; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; font-size: .85rem; }
 .pill { font-size: .78rem; padding: 2px 10px; border-radius: 999px; background: var(--glow-soft); color: var(--ink); border: 1px solid var(--glow); white-space: nowrap; }
-.links { grid-column: 1 / -1; grid-row: 3; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; border-top: 1px solid var(--line); padding-top: 12px; }
+.links { grid-column: 1 / -1; grid-row: 4; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; border-top: 1px solid var(--line); padding-top: 12px; }
 .links-h { font-family: var(--font-data); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
 .lk { font-size: .8rem; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; background: var(--surface-2); }
 .lk.ig { border-color: var(--accent); }
@@ -291,6 +303,8 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
 
 /* Small phones: the alternative-plan table becomes stacked rows */
 @media (max-width: 560px) {
+  .wx { grid-template-columns: 22px minmax(0, 1fr); }
+  .wx-link { grid-column: 2; justify-self: start; }
   .tablebox table, .tablebox tbody { display: block; }
   .tablebox thead { display: none; }
   .tablebox tr {
@@ -354,6 +368,7 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
       <div class="date"><span class="dow">Wed</span><span class="dnum">25</span><span class="mon">Nov · Arrival</span></div>
       <div class="body">
         <h3>Stuttgart's opening night</h3>
+        <div class="wx" data-date="2026-11-25" data-lat="48.778" data-lon="9.18"><svg class="wx-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 11.1 3.5 3.5 0 0 0 7 18z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span class="wx-text"><span class="wx-label">Typical late Nov · Stuttgart</span> <b class="wx-temp">0° to 6°C</b> <span class="wx-note">damp and often grey, light rain possible. Sunset 16:37</span></span><a class="wx-link" href="https://www.google.com/search?q=weather+Stuttgart" target="_blank" rel="noopener">Forecast ↗</a></div>
         <ul>
           <li><span class="t">~09:45</span><span>Land at Frankfurt, collect the car (check the real time in your booking)</span></li>
           <li><span class="t">~11:00</span><span>Drive to Stuttgart (~2h), lunch on the way or on arrival</span></li>
@@ -373,6 +388,7 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
       <div class="date"><span class="dow">Thu</span><span class="dnum">26</span><span class="mon">Nov · Colmar</span></div>
       <div class="body">
         <h3>Thermal baths, then Colmar by lantern light</h3>
+        <div class="wx" data-date="2026-11-26" data-lat="48.079" data-lon="7.358"><svg class="wx-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 11.1 3.5 3.5 0 0 0 7 18z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span class="wx-text"><span class="wx-label">Typical late Nov · Colmar</span> <b class="wx-temp">0° to 7°C</b> <span class="wx-note">one of France's driest towns, often clear and cold at night. Sunset 16:43</span></span><a class="wx-link" href="https://www.google.com/search?q=weather+Colmar" target="_blank" rel="noopener">Forecast ↗</a></div>
         <ul>
           <li><span class="t">09:30</span><span>Drive from Stuttgart to Baden-Baden (~1h15)</span></li>
           <li class="hl"><span class="t">10:45</span><span>Thermal baths, about 3 hours: Friedrichsbad or Caracalla</span></li>
@@ -392,6 +408,7 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
       <div class="date"><span class="dow">Fri</span><span class="dnum">27</span><span class="mon">Nov · Freiburg</span></div>
       <div class="body">
         <h3>Colmar morning, Freiburg, then the gorge after dark</h3>
+        <div class="wx" data-date="2026-11-27" data-lat="47.953" data-lon="8.053"><svg class="wx-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 11.1 3.5 3.5 0 0 0 7 18z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span class="wx-text"><span class="wx-label">Typical late Nov · Ravenna Gorge</span> <b class="wx-temp">−2° to 4°C</b> <span class="wx-note">higher up in the forest: around freezing after dark, snow possible. Sunset 16:39</span></span><a class="wx-link" href="https://www.google.com/search?q=weather+Ravenna+Gorge" target="_blank" rel="noopener">Forecast ↗</a></div>
         <ul>
           <li><span class="t">09:00</span><span>Petite Venise almost empty, before the day-trippers arrive</span></li>
           <li><span class="t">11:00</span><span>Drive to Freiburg via Breisach (~55 min)</span></li>
@@ -413,6 +430,7 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
       <div class="date"><span class="dow">Sat</span><span class="dnum">28</span><span class="mon">Nov · Park</span></div>
       <div class="body">
         <h3>Europa-Park, first day of Winter Magic</h3>
+        <div class="wx" data-date="2026-11-28" data-lat="48.266" data-lon="7.722"><svg class="wx-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 11.1 3.5 3.5 0 0 0 7 18z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span class="wx-text"><span class="wx-label">Typical late Nov · Europa-Park</span> <b class="wx-temp">1° to 7°C</b> <span class="wx-note">near freezing by evening, dress for a long day outside. Sunset 16:41</span></span><a class="wx-link" href="https://www.google.com/search?q=weather+Europa-Park" target="_blank" rel="noopener">Forecast ↗</a></div>
         <ul>
           <li><span class="t">10:15</span><span>Check out and drive from Freiburg to the park (~40 min)</span></li>
           <li><span class="t">11:00</span><span>In at opening time</span></li>
@@ -433,6 +451,7 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
       <div class="date"><span class="dow">Sun</span><span class="dnum">29</span><span class="mon">Nov · Home</span></div>
       <div class="body">
         <h3>Breakfast, return the car, walk to the terminal</h3>
+        <div class="wx" data-date="2026-11-29" data-lat="50.037" data-lon="8.562"><svg class="wx-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 11.1 3.5 3.5 0 0 0 7 18z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span class="wx-text"><span class="wx-label">Typical late Nov · Frankfurt</span> <b class="wx-temp">1° to 6°C</b> <span class="wx-note">grey and damp is typical. Sunset 16:28</span></span><a class="wx-link" href="https://www.google.com/search?q=weather+Frankfurt" target="_blank" rel="noopener">Forecast ↗</a></div>
         <ul>
           <li><span class="t">~08:00</span><span>At check-in: EL AL asks for about 3 hours before departure</span></li>
           <li><span class="t">~11:00</span><span>LY358 to Tel Aviv (check the real time in your booking)</span></li>
@@ -602,6 +621,34 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
     });
   });
   update();
+})();
+
+(function () {
+  var names = { 0: 'clear', 1: 'mostly clear', 2: 'partly cloudy', 3: 'cloudy', 45: 'fog', 48: 'fog',
+    51: 'drizzle', 53: 'drizzle', 55: 'drizzle', 56: 'freezing drizzle', 57: 'freezing drizzle',
+    61: 'light rain', 63: 'rain', 65: 'heavy rain', 66: 'freezing rain', 67: 'freezing rain',
+    71: 'light snow', 73: 'snow', 75: 'heavy snow', 77: 'snow', 80: 'showers', 81: 'showers', 82: 'heavy showers',
+    85: 'snow showers', 86: 'snow showers', 95: 'thunderstorm', 96: 'thunderstorm', 99: 'thunderstorm' };
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  document.querySelectorAll('.wx[data-date]').forEach(function (el) {
+    var d = new Date(el.dataset.date + 'T00:00:00');
+    var days = Math.round((d - today) / 86400000);
+    if (days < 0 || days > 15 || !window.fetch) return;
+    var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + el.dataset.lat + '&longitude=' + el.dataset.lon +
+      '&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code' +
+      '&timezone=Europe%2FBerlin&start_date=' + el.dataset.date + '&end_date=' + el.dataset.date;
+    fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (!j || !j.daily || j.daily.temperature_2m_max[0] == null) return;
+      var t = j.daily, place = el.querySelector('.wx-label').textContent.split('·')[1] || '';
+      el.querySelector('.wx-label').textContent = 'Forecast ·' + place;
+      el.querySelector('.wx-temp').textContent = Math.round(t.temperature_2m_min[0]) + '° to ' + Math.round(t.temperature_2m_max[0]) + '°C';
+      var bits = [names[t.weather_code[0]] || ''];
+      if (t.precipitation_probability_max[0] != null) bits.push(t.precipitation_probability_max[0] + '% chance of rain or snow');
+      var sunset = el.querySelector('.wx-note').textContent.match(/Sunset [0-9:]+/);
+      el.querySelector('.wx-note').textContent = bits.filter(Boolean).join(', ') + '. ' + (sunset ? sunset[0] : '');
+      el.classList.add('live');
+    }).catch(function () {});
+  });
 })();
 
 (function () {
