@@ -101,6 +101,8 @@ header { display: grid; gap: 16px; }
   padding: 14px 18px; border-radius: 4px; display: grid; gap: 4px;
 }
 .alert strong { color: var(--accent); }
+.alert.ok { background: var(--glow-soft); border-left-color: var(--glow); }
+.alert.ok strong { color: var(--glow); }
 
 /* Route ribbon */
 .route { overflow-x: auto; padding-bottom: 6px; }
@@ -366,9 +368,9 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
     <span><b>LY358</b> FRA 11:00 → TLV 16:10 · Sun 29 Nov</span>
     <span>Hertz car · Frankfurt Terminal 1</span>
   </div>
-  <div class="alert">
-    <strong>Book this week: Ravenna Gorge tickets go on sale 14 October at 10:00.</strong>
-    <span>Tickets are sold online only, with no ticket office at the market. Choose a slot on Friday 27 November around 16:00–16:30.</span>
+  <div class="alert ok">
+    <strong>Ravenna Gorge tickets booked: Fri 27 Nov, 19:00–21:00.</strong>
+    <span>5 tickets, parking + entry, arriving by car at the Ravenna viaduct in Breitnau. Keep the tickets on your phone.</span>
   </div>
 </header>
 
@@ -444,9 +446,10 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
           <li><span class="t">09:00</span><span>Petite Venise almost empty, before the day-trippers arrive</span></li>
           <li><span class="t">11:00</span><span>Drive to Freiburg via Breisach (~55 min)</span></li>
           <li><span class="t">12:00</span><span>Check in or drop bags at the Freiburg hotel, then lunch, the Minster, the market, the Bächle channels</span></li>
-          <li><span class="t">15:15</span><span>Drive to Himmelreich Park &amp; Ride (~25 min), take the shuttle</span></li>
-          <li class="hl"><span class="t">16:00</span><span>Ravenna Gorge Christmas market under the viaduct, until ~19:00</span></li>
-          <li><span class="t">19:30</span><span>Drive back to Freiburg (~25 min)</span></li>
+          <li><span class="t">17:00</span><span>Rest at the hotel, early dinner in Freiburg</span></li>
+          <li><span class="t">18:15</span><span>Drive to the Ravenna viaduct in Breitnau (~30 min). Parking is included in your ticket</span></li>
+          <li class="hl"><span class="t">19:00</span><span>Ravenna Gorge Christmas market under the viaduct, your slot 19:00–21:00</span></li>
+          <li><span class="t">21:00</span><span>Drive back to Freiburg (~30 min)</span></li>
         </ul>
         <div class="links"><span class="links-h">Watch &amp; read</span><a class="lk ig" href="https://www.instagram.com/explore/tags/freiburgweihnachtsmarkt/" target="_blank" rel="noopener">#freiburgweihnachtsmarkt</a><a class="lk" href="https://visit.freiburg.de/en/christmas-in-freiburg" target="_blank" rel="noopener">Christmas in Freiburg</a><a class="lk ig" href="https://www.instagram.com/explore/tags/ravennaschlucht/" target="_blank" rel="noopener">#ravennaschlucht</a><a class="lk" href="https://www.ravennaschlucht-schwarzwald.de/weihnachtsmarkt/" target="_blank" rel="noopener">Ravenna Gorge guide (German)</a></div>
         <div class="meta">
@@ -538,7 +541,7 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
     <li><span><b>Stuttgart on its opening night.</b> One of Germany's biggest and oldest markets opens on Wednesday 25 at 18:00, the evening you land. A nap in the afternoon covers the overnight flight.</span></li>
     <li><span><b>The spa on Thursday, when you're rested.</b> Baden-Baden sits on the way from Stuttgart to Colmar. Its market only opens on the 26th and is the least special of your markets, so skipping it costs little.</span></li>
     <li><span><b>Colmar twice, with no drive home.</b> Thursday night with the lights, Friday morning with Petite Venise almost empty. A weekday also means easier crowds and parking.</span></li>
-    <li><span><b>Freiburg is the hub for Friday.</b> It's under an hour from Colmar via Breisach, 25 minutes from the Ravenna shuttle, and 40 minutes from Europa-Park.</span></li>
+    <li><span><b>Freiburg is the hub for Friday.</b> It's under an hour from Colmar via Breisach, about 30 minutes from the Ravenna Gorge, and 40 minutes from Europa-Park.</span></li>
     <li><span><b>Sleeping in Freiburg on Friday</b> gives you a real city evening and more hotel choice than the park hotels. Leave around 10:15 on Saturday to be at the gates for the 11:00 opening. The 28th is the first day of the winter season and a Saturday, so it will be busy.</span></li>
   </ol>
   </div>
@@ -597,7 +600,7 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
   <div class="fold-body">
   <p class="progress" id="progress" aria-live="polite">0 of 9 done</p>
   <div class="checks" id="checks">
-    <label class="check urgent"><input type="checkbox" id="c-ravenna"><span><span class="ct">Ravenna Gorge tickets: Fri 27, slot ~16:00–16:30</span><br><span class="cd">On sale 14 Oct, 10:00. Official site only (fake tickets have been reported). Parking at the market isn't possible: use the shuttle from Himmelreich or Hinterzarten (reported free this year). Sources disagree on hours and prices, so confirm on the official page.</span></span></label>
+    <label class="check"><input type="checkbox" id="c-ravenna" checked><span><span class="ct">Ravenna Gorge tickets: booked</span><br><span class="cd">5 tickets, parking + entry, Fri 27 Nov, 19:00–21:00 at the Ravenna viaduct, Breitnau. The order number is in Flights &amp; car (locked). Have the tickets on your phone at the parking entrance.</span></span></label>
     <label class="check"><input type="checkbox" id="c-ep-ticket"><span><span class="ct">Europa-Park dated ticket for Sat 28</span><br><span class="cd">Winter season listed from 28 Nov, open daily 11:00 until at least 19:00.</span></span></label>
     <label class="check"><input type="checkbox" id="c-frb-hotel"><span><span class="ct">Freiburg hotel for Fri 27</span><br><span class="cd">Near the old town with parking, ideally on the south or east side for a quick start toward the Höllental (B31) and the A5.</span></span></label>
     <label class="check"><input type="checkbox" id="c-stg-hotel"><span><span class="ct">Stuttgart hotel for Wed 25</span><br><span class="cd">Walking distance to Schlossplatz and the market, with parking. Ask for early check-in.</span></span></label>
@@ -634,7 +637,7 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
     <div><h3>Borders</h3><p>France and Germany are both in Schengen, so there's no routine passport control. Germany does spot checks, so keep passports in the car.</p></div>
     <div><h3>Parking in Colmar</h3><p>On a Thursday the central garages (Lacarre, Rapp, Mairie) should be fine. Check whether your hotel has its own parking first.</p></div>
     <div><h3>Skip Strasbourg</h3><p>It needs a French Crit'Air sticker and has the region's heaviest traffic and crowds. Colmar gives more charm for less effort.</p></div>
-    <div><h3>Titisee instead of Freiburg</h3><p>If you'd rather see a lake than a city on Friday, walk by Lake Titisee and take the Ravenna shuttle from the Titisee Park &amp; Ride.</p></div>
+    <div><h3>Titisee instead of Freiburg</h3><p>If you'd rather see a lake than a city on Friday, walk by Lake Titisee in the afternoon, then drive on to the viaduct (about 20 minutes).</p></div>
     <div><h3>Friedrichsbad over Caracalla</h3><p>Caracalla is a very good modern spa. Friedrichsbad's 17-station Roman-Irish ritual under a 19th-century dome exists only here.</p></div>
     <div><h3>Eguisheim</h3><p>A village built in rings around a castle, 10 minutes from Colmar, with its own small market. Add an hour on the way in if you have energy.</p></div>
     <div><h3>What to eat and drink</h3><p>In Alsace: white mulled wine (vin chaud blanc), flammekueche and bredele biscuits. At the German markets: Feuerzangenbowle.</p></div>
@@ -691,7 +694,7 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
 
 
 (function () {
-  var V = {"salt":"OAm/feVSB+sCZU8t2l7+pw==","iv":"XMDRnHaZSrZGnP5w","ct":"ue3uzeRcRQyEQNUVid6VsD+zthjqL1QPnfDHOnymCSbPdxK+BRgcyFS8i9ryb/+9/IasRe+IzYtlsNnOK5NEndDo6c8xRYy7TQonfh2AVQDI3pU2vyA2BGQVKYW3zzt8RtMoqdDu/LTEPJ2CwOrkXwfmuVRaC5qc1cJiWjdiH4IQgDY2a3fu6d5TpwpsLni3ILHLwJfvqIxZ5wwYBkGQqqBQYHA4TLZH8JLPsUsnTENZ/Vs3QCzvf9+LL6DE7fiSrEhs0qqREoTkC1366PB4xY5s/4mKKfoaOXofGwDYgdTuPzZqTm37EQJs1iymJSg/MXHPQccpDpRZW8fIztTclTc2tEyzvP2MDgbyBcOUF8jPK1XP1hmQsLLX6fVLy7FxTdyTdguSMRMeXJ/SJojwbexMIePsGFP/o7NSIlLSz2FPIWY4Zo9WS1iFOhdrdNgu+OKwO8g3Q0udCUlFSPQmGA4h0tm8qJPhZuBJfMMqzBdV7BVdkDtgCqgdLTaCEWEIbkZUy3jsnYcT3vjSQSKaCTGX4bLCXSbPaEPz838fsefXypc/7QFALJjS8yv8TwIGtAeVmopIfshzLGrCxG3NJqmHnlGrj/DGYIqT/EpHyg1coPyGgMiS/51Dt78w+n8WsbPvLoOvHN/+MdKuENwEvF31MNgmT74y02dAM6w74Q6wpJOeLef/cHNYN8Bic8tQ4HrgtHG6Eapc3S5IHAjWc2DSNXeDEBQrJ3R9Tq0jzFCit/6EhhzArEuDe0pec3ej4z2i57D8wDLNhMp2lBImW2hYQe5+9MCpOTSKUvUP01roPh9YCllotgFeqrNIIlydwhxbghdInf8ZNSQvMJrq+Bty5udumgyqSTe6gkczHjtFrYOOpGKvBDjVPiS3AHG9HDX7prgM/dJeCrBRGUBWOgXwbGbvNuP4Qo6tVlVnyGzMjX+cbV+UFaj0osQxtlbeFTXQb9QjiXt+/1oUvk4wJdXtOsLd8CCx6iciNuRCARskJlVunGFAM/kXXqpPaJPNYR2zol5wMpf5cAVtuETKf3sakyj3nqEfNcKgtP/7jxOmsfHVXSHb91wh/gaCWv0gGzfrP6MeFOHvJmzcWLllaL6tbaG/kf89mdvKY2sWmtBR+eFt7I+8iE+KY1Ovma5vON+nQAopgKrzwqFLlvsCe+GF1hSWiy5mUEt/uyyNR/oYIaL5DvaHrHyr/A6qnSQdP5eWMliUtYPCUg7PjQuYZ+muQbtLzT6F3dhs/7t+E9piChAvvRApeZ8Xo5okQzZ9rka4+qiV5PnmRzXmIP1tijtBtT5weXASYcr93qwap9bCKbrIbyJOgvBDcLeLAi88pr/37nYFScxzlBLYk+QtxI9tnYIqsKG0zuu2ydOf5baZjFH7Zt6Nd8uV/lCJbm0P6svnCnrbRT9iWkO1wpa2FRSYNhPAlMM9WuELx65VNlJMzhSNTF/Ot7DSmd7wmn8hcWrUDGXpxrhyz4veQ1KcOazug+zOBr4LaQ/9U3v9bfDPys47j8IUtmVk33fg28Zc/KLb30Cw+2/p5rDod7g/7yNRtyw2nIUL8zJWhyQ/OYoAdUV3kQnqv2VeumnhcSGTWA89djCHctcs1alP/IrSqNyoeXxudAmoXnRr+aUxRNzfoPCXSJ1G10lxEtuNwM4QSPgarMas5cSxz8hc","iter":600000};
+  var V = {"salt":"POibfKMEEoOgiVLKUA5qHA==","iv":"lzdrubztDtHrxl7O","ct":"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","iter":600000};
   var KEY = 'trip-vault-faceid-2';
   var $ = function (id) { return document.getElementById(id); };
   var openBtn = $('vault-open'), label = $('vault-open-label'), form = $('vault-form'), pass = $('vault-pass'),
