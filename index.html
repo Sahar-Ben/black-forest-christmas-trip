@@ -104,6 +104,10 @@ header { display: grid; gap: 16px; }
 .alert.ok { background: var(--glow-soft); border-left-color: var(--glow); }
 .alert.ok strong { color: var(--glow); }
 
+.map-btn { justify-self: start; display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--glow); color: var(--ink); text-decoration: none; font-weight: 600; font-size: .92rem; }
+.map-btn svg { width: 20px; height: 20px; color: var(--glow); flex: none; }
+.map-btn:hover, .map-btn:focus-visible { background: var(--glow); color: var(--bg-deep); }
+.map-btn:hover svg, .map-btn:focus-visible svg { color: var(--bg-deep); }
 /* Route ribbon */
 .route { overflow-x: auto; padding-bottom: 6px; }
 .route ol { list-style: none; margin: 0; padding: 0; display: flex; align-items: flex-start; min-width: 720px; }
@@ -373,6 +377,7 @@ footer { font-size: .82rem; color: var(--muted); border-top: 1px solid var(--lin
 <section aria-labelledby="route-h">
   <div class="eyebrow">The route</div>
   <h2 id="route-h">One loop, never doubling back</h2>
+  <a class="map-btn" href="https://maps.app.goo.gl/vn3kK7dasQV7xpQQ7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Our map: Christmas markets in the Black Forest</span><span aria-hidden="true">↗</span></a>
   <div class="route">
     <ol>
       <li><span class="dot"></span><span class="when">Wed 25</span><span class="name">Frankfurt Airport</span><span class="sub">Land, pick up car</span></li>
